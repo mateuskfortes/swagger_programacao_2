@@ -1,5 +1,5 @@
 const express = require('express');
-const Usuario = require('./usuario');
+const Usuario = require('../models/usuario');
 const mongoose = require('mongoose');
 const router = express.Router();
 
@@ -110,7 +110,7 @@ router.post('/', async (req, res) => {
     await usuario.save();
     res.status(201).json(usuario);
   } catch (err) {
-    res.status(400).json({ error: 'Erro ao criar usuário' });
+    res.status(400).json({ error: 'Erro ao criar usuário', error_msg: err.message });
   }
 });
 

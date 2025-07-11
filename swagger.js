@@ -24,11 +24,32 @@ const options = {
             email: { type: 'string', example: 'joao@email.com' },
           },
           required: ['nome', 'email']
+        },
+        Perfil: {
+          type: 'object',
+          properties: {
+            _id: { type: 'string'},
+            bio: { type: 'string', description: 'Biografia do usuário' },
+            idade: { type: 'integer', description: 'Idade do usuário' },
+            usuario: {
+              $ref: '#/components/schemas/Usuario'
+            }
+          }
+        },
+        PerfilInput: {
+          type: 'object',
+          properties: {
+            bio: { type: 'string', example: 'Desenvolvedor fullstack' },
+            idade: { type: 'integer', example: 30 },
+            usuario: { type: 'string', example: '64b1a89ae12d3f53b3b7c8f7' }
+          },
+          required: ['usuario']
         }
+
       }
     }
   },
-  apis: ['./usuarioRoutes.js'], // Caminho para onde estão os JSDoc das rotas
+  apis: ['./routes/*.js'], // Caminho para onde estão os JSDoc das rotas
 };
 
 const swaggerSpec = swaggerJsdoc(options);

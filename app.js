@@ -1,7 +1,8 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const dotenv = require('dotenv');
-const usuarioRoutes = require('./usuarioRoutes');
+const usuarioRoutes = require('./routes/usuarioRoutes');
+const perfilRoutes = require('./routes/perfilRoutes');
 const swaggerUi = require('swagger-ui-express');
 const swaggerSpec = require('./swagger');
 
@@ -17,6 +18,9 @@ mongoose.connect(process.env.MONGODB_URI)
 
 // Rotas de usuários
 app.use('/usuarios', usuarioRoutes);
+
+// Rotas de perfis
+app.use('/perfis', perfilRoutes);
 
 // Rota Swagger
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
