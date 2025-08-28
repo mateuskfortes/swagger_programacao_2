@@ -16,7 +16,7 @@ Este projeto é um exemplo de API RESTful criada com Node.js, Express e MongoDB 
 1. Clone o repositório
 
 ```bash
-https://github.com/mateuskfortes/swagger_programacao_2.git
+git clone https://github.com/mateuskfortes/swagger_programacao_2.git
 cd swagger_programacao_2
 ```
 
@@ -36,7 +36,7 @@ Substitua <db_username> pelo seu usuário atlas e o <db_password> pela sua senha
 4. Inicie o servidor
 
 ```bash
-node app.js
+npm start
 ```
 A API será iniciada em [http://localhost:3000](http://localhost:3000). 
 O Swagger será visível em [http://localhost:3000/api-docs](http://localhost:3000/api-docs/).

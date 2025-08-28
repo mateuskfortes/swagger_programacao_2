@@ -1,6 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const dotenv = require('dotenv');
+const mainRoutes = require('./routes/mainRoutes')
 const usuarioRoutes = require('./routes/usuarioRoutes');
 const perfilRoutes = require('./routes/perfilRoutes');
 const swaggerUi = require('swagger-ui-express');
@@ -15,6 +16,9 @@ app.use(express.json());
 mongoose.connect(process.env.MONGODB_URI)
   .then(() => console.log('Conectado ao MongoDB'))
   .catch(err => console.error('Erro ao conectar ao MongoDB', err));
+
+// Rota padrão
+app.use('/', mainRoutes)
 
 // Rotas de usuários
 app.use('/usuarios', usuarioRoutes);
