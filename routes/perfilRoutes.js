@@ -37,28 +37,28 @@ router.get('/', async (req, res) => {
   }
 });
 
-/**
- * @swagger
- * /perfis:
- *   post:
- *     summary: Cria um novo perfil
- *     tags: [Perfis]
- *     requestBody:
- *       required: true
- *       content:
- *         application/json:
- *           schema:
- *             $ref: '#/components/schemas/PerfilInput'
- *     responses:
- *       201:
- *         description: Perfil criado
- *         content:
- *           application/json:
- *             schema:
- *               $ref: '#/components/schemas/Perfil'
- *       400:
- *         description: Dados inválidos
- */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 router.post('/', async (req, res) => {
   try {
     const perfil = new Perfil(req.body);
@@ -69,30 +69,30 @@ router.post('/', async (req, res) => {
   }
 });
 
-/**
- * @swagger
- * /perfis/{id}:
- *   get:
- *     summary: Busca um perfil pelo ID
- *     tags: [Perfis]
- *     parameters:
- *       - in: path
- *         name: id
- *         required: true
- *         schema:
- *           type: string
- *     responses:
- *       200:
- *         description: Perfil encontrado
- *         content:
- *           application/json:
- *             schema:
- *               $ref: '#/components/schemas/Perfil'
- *       400:
- *         description: ID inválido
- *       404:
- *         description: Perfil não encontrado
- */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 router.get('/:id', async (req, res) => {
   const { id } = req.params;
   if (!mongoose.Types.ObjectId.isValid(id)) {
@@ -105,32 +105,32 @@ router.get('/:id', async (req, res) => {
   res.json(perfil);
 });
 
-/**
- * @swagger
- * /perfis/{id}:
- *   put:
- *     summary: Atualiza um perfil
- *     tags: [Perfis]
- *     parameters:
- *       - in: path
- *         name: id
- *         required: true
- *         schema:
- *           type: string
- *     requestBody:
- *       required: true
- *       content:
- *         application/json:
- *           schema:
- *             $ref: '#/components/schemas/PerfilInput'
- *     responses:
- *       200:
- *         description: Perfil atualizado
- *       400:
- *         description: ID ou dados inválidos
- *       404:
- *         description: Perfil não encontrado
- */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 router.put('/:id', async (req, res) => {
   const { id } = req.params;
   if (!mongoose.Types.ObjectId.isValid(id)) {
@@ -143,26 +143,26 @@ router.put('/:id', async (req, res) => {
   res.json(perfil);
 });
 
-/**
- * @swagger
- * /perfis/{id}:
- *   delete:
- *     summary: Remove um perfil
- *     tags: [Perfis]
- *     parameters:
- *       - in: path
- *         name: id
- *         required: true
- *         schema:
- *           type: string
- *     responses:
- *       204:
- *         description: Perfil removido
- *       400:
- *         description: ID inválido
- *       404:
- *         description: Perfil não encontrado
- */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 router.delete('/:id', async (req, res) => {
   const { id } = req.params;
   if (!mongoose.Types.ObjectId.isValid(id)) {
