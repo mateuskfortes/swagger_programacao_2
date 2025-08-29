@@ -67,3 +67,229 @@ POST /perfis – Cria um novo perfil vinculado a um usuário
 PUT /perfis/:id – Atualiza um perfil
 
 DELETE /perfis/:id – Remove um perfil
+
+# Explicação do Trecho de Código Swagger
+
+Esse trecho de código faz a documentação da rota de atualização de perfis no **Swagger**.  
+Ele **não executa a atualização do perfil**, mas descreve como essa rota da API deve funcionar.  
+O Swagger usa essas informações para gerar automaticamente uma página de **documentação interativa**, onde os desenvolvedores conseguem entender e testar a API.
+
+---
+
+## Linha por Linha
+
+### Linha 108
+```js
+/**
+```
+
+Indica o início do bloco de comentários em **JSDoc**.
+Dentro desse bloco é escrita a documentação Swagger.
+
+### Linha 109
+
+```js
+ * @swagger
+```
+
+Diz ao Swagger que o conteúdo dentro desse bloco será lido para gerar a documentação da API.
+
+### Linha 110
+
+```js
+ * /perfis/{id}:
+```
+
+Define o **endpoint da rota**.
+`/perfis/{id}` significa que a rota vai esperar um **id** como parâmetro.
+
+### Linha 111
+
+```js
+ *   put:
+```
+
+Diz qual o **método HTTP** usado nessa rota.
+
+### Linha 112
+
+```js
+ *     summary: Atualiza um perfil
+```
+
+Uma **descrição curta** que aparece na documentação.
+
+### Linha 113
+
+```js
+ *     tags: [Perfis]
+```
+
+Agrupa rotas semelhantes em uma categoria chamada **tag**.
+Aqui, todas as rotas de **"Perfis"** ficam juntas.
+
+> Sempre coloque o nome do grupo entre **colchetes**.
+
+### Linha 114
+
+```js
+ *     parameters:
+```
+
+Declara os **parâmetros da rota**.
+
+### Linha 115
+
+```js
+ *       - in: path
+```
+
+Define **onde o parâmetro aparece**.
+
+### Linha 116
+
+```js
+ *         name: id
+```
+
+Nome do parâmetro no path.
+Tem que ser o mesmo `{id}` da URL.
+
+### Linha 117
+
+```js
+ *         required: true
+```
+
+Indica que esse parâmetro é **obrigatório**.
+
+### Linha 118
+
+```js
+ *         schema:
+```
+
+Define o **tipo de dado esperado**.
+
+### Linha 119
+
+```js
+ *           type: string
+```
+
+Indica que o **id deve ser uma string**.
+
+### Linha 120
+
+```js
+ *     requestBody:
+```
+
+Indica que o **corpo da requisição (body)** é necessário.
+
+### Linha 121
+
+```js
+ *       required: true
+```
+
+Diz que o corpo da requisição é **obrigatório**.
+
+### Linha 122
+
+```js
+ *       content:
+```
+
+Especifica o **formato dos dados enviados**.
+
+### Linha 123
+
+```js
+ *         application/json:
+```
+
+Diz que o corpo da requisição deve estar no formato **JSON**.
+
+### Linha 124
+
+```js
+ *           schema:
+```
+
+Define como será a **estrutura do JSON esperado**.
+
+### Linha 125
+
+```js
+ *             $ref: '#/components/schemas/Perfil'
+```
+
+Faz referência a um **schema já definido no Swagger**.
+
+### Linha 126
+
+```js
+ *     responses:
+```
+
+Define as **respostas possíveis** que a rota pode retornar.
+
+### Linha 127
+
+```js
+ *       200:
+```
+
+Código de resposta **200 OK** → Requisição deu certo.
+
+### Linha 128
+
+```js
+ *         description: Perfil atualizado com sucesso
+```
+
+Texto que descreve o que significa esse status.
+
+### Linha 129
+
+```js
+ *       400:
+```
+
+Código **400 Bad Request** → Erro na requisição.
+
+### Linha 130
+
+```js
+ *         description: Requisição inválida
+```
+
+Explica o que significa o erro **400**.
+
+### Linha 131
+
+```js
+ *       404:
+```
+
+Código **404 Not Found** → Perfil não encontrado.
+
+### Linha 132
+
+```js
+ *         description: Perfil não encontrado
+```
+
+Explica o que significa o erro **404**.
+
+### Linha 133
+
+```js
+ */
+```
+
+Fecha o bloco de documentação Swagger.
+
+> Sempre finalize com `*/`.
+
