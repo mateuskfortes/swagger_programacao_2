@@ -58,7 +58,7 @@ DELETE /usuarios/:id – Remove um usuário
 
 Perfis (/perfis)
 
-GET /perfis – Lista todos os perfis (com usuário populado)
+GET /perfis – Lista todos os perfis
 
 GET /perfis/:id – Retorna um perfil pelo ID
 
@@ -291,5 +291,4 @@ Explica o que significa o erro **404**.
 
 Fecha o bloco de documentação Swagger.
 
-> Sempre finalize com `*/`.
 
