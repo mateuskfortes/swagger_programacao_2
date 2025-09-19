@@ -13,7 +13,7 @@ Este projeto é um exemplo de API RESTful criada com Node.js, Express e MongoDB 
 ---
 ## Como rodar o projeto
 
-- Baixar o mongodb: https://fastdl.mongodb.org/windows/mongodb-windows-x86_64-8.2.0-signed.msi
+- Baixar o mongodb na pasta Downloads: https://fastdl.mongodb.org/windows/mongodb-windows-x86_64-8.2.0-signed.msi
 
 - Abrir o cmd e executar os seguintes comandos:
 ```bash
