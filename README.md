@@ -38,7 +38,7 @@ npm install
 
 Crie um arquivo .env com a variável:
 ```bash
-MONGODB_URI=mongodb+srv://<db_username>:<db_password>@cluster0.ifjt3b2.mongodb.net/
+MONGODB_URI=mongodb://localhost:27017
 ```
 Substitua <db_username> pelo seu usuário atlas e o <db_password> pela sua senha do usuário atlas.
 
